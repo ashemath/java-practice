@@ -40,8 +40,8 @@ public class convert_temp{
     // 212 F
 
     public static void main(String[] args) {
-      char origin_unit;
-      double degrees;
+      char origin_unit = 'z';
+      double degrees = 42;
       if (args.length == 1){
           degrees = Double.parseDouble(parse_degrees(args[0])); 
           origin_unit = parse_origin(args[0]);
@@ -49,10 +49,8 @@ public class convert_temp{
       else if (args.length == 2){
         degrees = Double.parseDouble(args[0]);
         origin_unit = args[1].charAt(0);
-      } else {
-        origin_unit = 'z';
-        degrees = 42;
       }
+
       switch (origin_unit) {
         case 'C':
             System.out.println(c2F(degrees)+"F");
@@ -67,9 +65,12 @@ public class convert_temp{
             System.out.println(f2C(degrees)+"C");
             break;
         default:
-            System.out.println("error, see example below:\n convert_temp 32 f");
-            //System.out.println(parse_degrees("310f") + parse_origin("610x"));
-
+            System.out.println(
+              """
+              error, see examples below:
+              convert_temp 32 f
+              convert_temp 0c
+              """);
       }
 
     }
