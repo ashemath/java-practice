@@ -2,11 +2,7 @@ public class convert_temp{
     // convert freedom units to celsius and back again.
     
 
-    // Variable to hold C or F, the origin unit.
-    byte origin_unit;
-
     // Helper function to convert C to F
-
     public static double c2F(double c) {
       double F = 1.8*c + 32;
       return F;
