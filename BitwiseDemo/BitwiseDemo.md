@@ -53,12 +53,13 @@ we represent integers, and the way numbers are encoded can be described in
 bitwise operations.
 
 let a = 15
-In 8-bit encoding: 
-a = 0000 1111
+In 32-bit encoding: 
+a = 0000 0000 0000 0000 0000 0000 0000 1111
 
 Therefore, if b = -a:
-First complement a:
+First we complement a:
 0000 0000 0000 0000 0000 0000 0000 1111 -> 1111 1111 1111 1111 1111 1111 1111 0000
+
 Next, add 1 to the binary representation:
 1111 1111 1111 1111 1111 1111 1111 0000 -> 1111 1111 1111 1111 1111 1111 1111 0001
 
