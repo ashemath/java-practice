@@ -1,5 +1,6 @@
 public class convertTemp{
   // convert freedom units to celsius and back again.
+  // takes either one or two arguments.
 
   // Helper function to convert C to F
   static double c2F(double c) {
@@ -39,12 +40,10 @@ public class convertTemp{
     }
   }
 
-  // examples: 
-  // convert_temp 32 F
-  // 0 C
-
-  // convert_temp 100 C
-  // 212 F
+  static String redify(String text){
+    String redText = "\033[0;31m"+text+"\033[0m";
+    return redText;
+  }
 
   public static void main(String[] args) {
     char originUnit = 'Z';
@@ -53,7 +52,7 @@ public class convertTemp{
       degrees = Double.parseDouble(parseDegrees(args[0])); 
       originUnit = parseOrigin(args[0]);
     }
-    else if (args.length == 2){
+    else if (args.length == 2 && args[1].length()==1){
       degrees = Double.parseDouble(args[0]);
       originUnit = args[1].charAt(0);
     }
@@ -68,12 +67,15 @@ public class convertTemp{
       case 'Z':
 	;
       default:
-        System.out.println(
+        System.out.println(redify(
           """
-          error, see examples below:
-          convert_temp 32 f
-          convert_temp 0c
-          """);
+error, see examples below...
+Enter temperature with two arguments:
+convert_temp 32 f
+
+Enter temperature with one argument:
+convert_temp 0c
+          """));
       }
     }
 }
