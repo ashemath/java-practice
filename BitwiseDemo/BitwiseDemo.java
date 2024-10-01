@@ -1,4 +1,4 @@
-public class bitwiseDemo {
+public class BitwiseDemo {
   
   public static void blank(){
     System.out.println();

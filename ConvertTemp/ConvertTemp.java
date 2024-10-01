@@ -1,4 +1,4 @@
-public class convertTemp{
+public class ConvertTemp{
   // convert freedom units to celsius and back again.
   // takes either one or two arguments.
 
