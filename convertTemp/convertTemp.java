@@ -67,15 +67,13 @@ public class convertTemp{
       case 'Z':
 	;
       default:
-        System.out.println(redify(
-          """
-error, see examples below...
-Enter temperature with two arguments:
-convert_temp 32 f
-
-Enter temperature with one argument:
-convert_temp 0c
-          """));
+        System.out.println(redify("""
+        Invalid input, see examples below...
+        Enter temperature with two arguments:
+          convert_temp 32 f
+        Enter temperature with one argument:
+          convert_temp 0c
+        """));
       }
     }
 }
