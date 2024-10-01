@@ -24,9 +24,19 @@ public class convertTemp{
     return degrees;
   }
 
-  public static char parseOrigin( String arg){
+  static char parseOrigin( String arg){
     char origin = arg.charAt(arg.length()-1);
     return origin;
+  }
+
+  static char sanitizeOrigin( char origin){
+    if (origin == 'c' || origin == 'C'){
+      return 'C';
+    } else if (origin == 'f' || origin == 'F'){
+      return 'F';
+    } else {
+      return 'Z';
+    }
   }
 
   // examples: 
@@ -37,7 +47,7 @@ public class convertTemp{
   // 212 F
 
   public static void main(String[] args) {
-    char originUnit = 'z';
+    char originUnit = 'Z';
     double degrees = 42;
     if (args.length == 1){
       degrees = Double.parseDouble(parseDegrees(args[0])); 
@@ -48,19 +58,15 @@ public class convertTemp{
       originUnit = args[1].charAt(0);
     }
 
-    switch (originUnit) {
+    switch (sanitizeOrigin(originUnit)) {
       case 'C':
-        System.out.println(c2F(degrees)+"F");
-        break;
-      case 'c':
         System.out.println(c2F(degrees)+"F");
         break;
       case 'F':
         System.out.println(f2C(degrees)+"C");
         break;
-      case 'f':
-        System.out.println(f2C(degrees)+"C");
-        break;
+      case 'Z':
+	;
       default:
         System.out.println(
           """
