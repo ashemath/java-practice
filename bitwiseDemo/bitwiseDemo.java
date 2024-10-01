@@ -67,5 +67,14 @@ public class bitwiseDemo {
     System.out.println("Now, let's use the same a and b but with OR.");
     System.out.println("with OR all of the columns have atleast one 1");
     System.out.println("a|b = "+Integer.toBinaryString(c));
+    blank();
+
+    a = 10001110;
+    c = ~a;
+    System.out.println("let a be:"+Integer.toBinaryString(a));
+    System.out.println("The complement operator switches 1's and 0's around:");
+    System.out.println("~a = "+Integer.toBinaryString(c));
+    System.out.println("64-bit integer has bunches of leading 0's,");
+    System.out.println("so those are flipped to 1's in the front.");
   }
 }
