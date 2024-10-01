@@ -67,4 +67,4 @@ Next, add 1 to the binary representation:
 System.out.println("b is: "+0b11111111111111111111111111110001)
 b is: -15
 ```
-See Proof.java to verify the avovve result.
+See Proof.java to verify the above result.
