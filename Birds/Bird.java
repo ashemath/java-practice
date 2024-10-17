@@ -1,6 +1,13 @@
 import java.util.*;
 
 public class Bird {
+    // Public or private or protected are the so-called modifiers
+    // Private means that the properties are only callable inside the
+    // class.
+    // Public means that the property/method is accessible outside the class
+    // Protected means that the property/method is acessible to only the class
+    // or derived classes (Crazy class heirarchy stuff).
+
     private static int quantity = 0;
     private String color;
     private String call;
