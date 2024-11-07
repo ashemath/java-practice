@@ -1,6 +1,3 @@
-
-
-
 /**
  * LinkedStuff is a generic singly-linked list data structure
  */
