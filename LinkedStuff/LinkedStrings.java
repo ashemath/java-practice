@@ -31,7 +31,7 @@ public class LinkedStrings {
     }
 
 
-	public void append(LinkedStrings list, String word){
+	public void append(String word){
         Node new_node = new Node(word);
         if (head == null) {
             head = new_node;
@@ -45,10 +45,10 @@ public class LinkedStrings {
         length += 1;
     }
 
-    public String readWords(LinkedStrings list){
+    public String readWords(){
         StringBuilder buffer = new StringBuilder();
 
-        Node readHead = list.head;
+        Node readHead = this.head;
         while ( readHead !=  null ){
             buffer.append( readHead.word );
             readHead = readHead.next;
@@ -63,9 +63,9 @@ public class LinkedStrings {
 	public static void main(String[] args){
                 System.out.println("Test String!!!!!");
                 LinkedStrings list = new LinkedStrings("Hello");
-                list.append(list,"World");
-                list.append(list,"Dude");
-                String output = list.readWords( list );
+                list.append("World");
+                list.append("Dude");
+                String output = list.readWords();
                 System.out.println(output);
                 System.out.println("Length is: " + length);
         }
