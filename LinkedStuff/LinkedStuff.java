@@ -3,7 +3,7 @@
  */
 public class LinkedStuff<T> {
     static int length = 1;
-	public Node<T> head;
+  public Node<T> head;
 
     static class Node<T>{
         T data;
@@ -12,8 +12,7 @@ public class LinkedStuff<T> {
         Node(T d){
             data = d;
             next = null;
-        }
-        
+        }    
     }
     
     /**
@@ -29,7 +28,7 @@ public class LinkedStuff<T> {
      * Add another unit of data to the end of the linked list.
      * @param data  T   unit of data to be stored.
      */
-	public void append(T data){
+    public void append(T data){
         Node<T> new_node = new Node<T>(data);
         if (head == null) {
             head = new_node;
@@ -59,18 +58,17 @@ public class LinkedStuff<T> {
                 buffer.append(" ");
             }
         }
-
         return buffer.toString();
     }
 
-	public static void main(String[] args){
-                LinkedStuff<Double> list = new LinkedStuff<Double>(0.5);
-                list.append(0.4);
-                list.append(2.45);
-                String output = list.readStuff();
-                System.out.println(output);
-                System.out.println("Length is: " + length);
-        }
+    public static void main(String[] args){
+        LinkedStuff<Double> list = new LinkedStuff<Double>(0.5);
+        list.append(0.4);
+        list.append(2.45);
+        String output = list.readStuff();
+        System.out.println(output);
+        System.out.println("Length is: " + length);
+    }
 
 }
 
