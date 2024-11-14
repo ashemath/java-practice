@@ -2,7 +2,7 @@
  * LinkedStuff is a generic singly-linked list data structure
  */
 public class LinkedStuff<T> {
-    public Integer length = 1;
+    Integer length = 1;
     public Node<T> head;
 
     static class Node<T>{
@@ -23,6 +23,10 @@ public class LinkedStuff<T> {
         head = new Node<T>(d);
     }
 
+    /**
+     * copy
+     * return a copy of a list. All  nodes are  duplicated under the new lsit.
+     */
     public LinkedStuff<T> copy() {
         return this.first(this.length);
     }
@@ -48,6 +52,10 @@ public class LinkedStuff<T> {
         }
         sub.length = new_length;
         return sub;
+    }
+
+    public Integer length(){
+        return this.length;
     }
 
     /**
@@ -134,30 +142,15 @@ public class LinkedStuff<T> {
     }
 
     public static void main(String[] args){
-        LinkedStuff<Double> list = new LinkedStuff<Double>(0.5);
-        list.append(0.4);
-        list.append(2.45);
-        list.prepend(3.14);
-
-        LinkedStuff<Double >list2 = list.copy();
-        //LinkedStuff<Double> list2 = list.first(4);
+        LinkedStuff<String> list = new LinkedStuff<String>("Bill");
+        list.append("is");
+        list.append("a");
+        list.prepend("Hey!");
+        list.append("wizard!");
         String output = list.readStuff();
         System.out.println(output);
-        System.out.println("Length is: " + list.length);
-        String output2 = list2.readStuff();
-        System.out.println("list2 AKA copy of list:\n" + output2);
-        System.out.println("Length of list2 is: " + list2.length );
+        System.out.println("Length is: " + list.length());
 
-        //LinkedStuff<Double> list3 = list2.copy();
-        list2.insert(2, .666);
-        String output3 = list2.readStuff();
-        System.out.println("list2 after data insert:\n" + output3);
-        System.out.println("list2 length after insert is: " + list2.length );
-        LinkedStuff<Double> list3 = list2.copy();
-        list3.insert(3, 42.42);
-        String output4 = list3.readStuff();
-        System.out.println("after copy and insert\n" + output4);
-        System.out.println("length for list3: " + list3.length);
     }
 
 }
