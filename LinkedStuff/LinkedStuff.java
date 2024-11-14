@@ -3,7 +3,7 @@
  */
 public class LinkedStuff<T> {
     Integer length = 1;
-    public Node<T> head;
+    Node<T> head;
 
     static class Node<T>{
         T data;
@@ -28,7 +28,7 @@ public class LinkedStuff<T> {
      * return a copy of a list. All  nodes are  duplicated under the new lsit.
      */
     public LinkedStuff<T> copy() {
-        return this.first(this.length);
+        return first(length);
     }
 
     /**
@@ -55,7 +55,7 @@ public class LinkedStuff<T> {
     }
 
     public Integer length(){
-        return this.length;
+        return length;
     }
 
     /**
@@ -119,7 +119,7 @@ public class LinkedStuff<T> {
             }
             last.next = new_node;
         }
-        length += 1;
+        length++;
     }
 
     /**
@@ -151,6 +151,10 @@ public class LinkedStuff<T> {
         System.out.println(output);
         System.out.println("Length is: " + list.length());
 
+        LinkedStuff<String> list2 = list.copy();
+        list2.insert(1, "See!");
+        System.out.println(list2.readStuff());
+        System.out.println("Length is: " + list2.length());
     }
 
 }
