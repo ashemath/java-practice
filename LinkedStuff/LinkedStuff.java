@@ -64,7 +64,7 @@ public class LinkedStuff<T> {
     }
 
     public void insert(int n, T d){
-        Node<T> new_node = new Node(d);
+        Node<T> new_node = new Node<T>(d);
         Node<T> index = this.head;
         Node<T> before = null;
         Node<T> after = null;
@@ -124,7 +124,7 @@ public class LinkedStuff<T> {
 
         Node<T> readHead = this.head;
         while ( readHead !=  null ){
-            buffer.append( readHead.data.toString());
+            buffer.append( readHead.data.toString() );
             readHead = readHead.next;
             if (readHead != null ){
                 buffer.append(" ");
@@ -139,22 +139,25 @@ public class LinkedStuff<T> {
         list.append(2.45);
         list.prepend(3.14);
 
-        LinkedStuff<Double> list2 = list.first(4);
+        LinkedStuff<Double >list2 = list.copy();
+        //LinkedStuff<Double> list2 = list.first(4);
         String output = list.readStuff();
-        System.out.println("the data at head is: " + list.head().toString());
         System.out.println(output);
         System.out.println("Length is: " + list.length);
         String output2 = list2.readStuff();
-        System.out.println(output2);
+        System.out.println("list2 AKA copy of list:\n" + output2);
         System.out.println("Length of list2 is: " + list2.length );
 
+        //LinkedStuff<Double> list3 = list2.copy();
+        list2.insert(2, .666);
+        String output3 = list2.readStuff();
+        System.out.println("list2 after data insert:\n" + output3);
+        System.out.println("list2 length after insert is: " + list2.length );
         LinkedStuff<Double> list3 = list2.copy();
-        list3.insert(4, 6.66);
-        list3.insert(3, 42.66);
-        list3.insert(0, 0.42);
-        String output3 = list3.readStuff();
-        System.out.println(output3);
-        System.out.println("Length of list3 is: " + list3.length );
+        list3.insert(3, 42.42);
+        String output4 = list3.readStuff();
+        System.out.println("after copy and insert\n" + output4);
+        System.out.println("length for list3: " + list3.length);
     }
 
 }
